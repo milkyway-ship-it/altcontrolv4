@@ -1,18 +1,16 @@
 --// =========================
 --// ALT CONTROL V4 (payload)
---// Lag-fixed, key-system-free build
+--// No key system, lag-fixed
 --// =========================
 
-local Players          = game:GetService("Players")
-local TweenService     = game:GetService("TweenService")
-local UserInputService = game:GetService("UserInputService")
-local SoundService     = game:GetService("SoundService")
+local Players      = game:GetService("Players")
+local TweenService = game:GetService("TweenService")
 
 local LOCAL_PLAYER = Players.LocalPlayer
 local LOCAL_NAME   = LOCAL_PLAYER.Name
 
 -- ============================================================
--- LAG FIX: bots skip the entire GUI build.
+-- Bots skip the GUI entirely.
 -- ============================================================
 local configuredMaster = getgenv().masterUsername
 local IS_MASTER
@@ -317,8 +315,8 @@ task.spawn(function()
     SetupWarningGUI:Destroy()
 end)
 
-SetupPanel.Size               = UDim2.new(0, 0, 0, 0)
-Frame.BackgroundTransparency  = 1
+SetupPanel.Size              = UDim2.new(0, 0, 0, 0)
+Frame.BackgroundTransparency = 1
 TweenService:Create(Frame,      TweenInfo.new(0.3), { BackgroundTransparency = 0.35 }):Play()
 TweenService:Create(SetupPanel, TweenInfo.new(0.5, Enum.EasingStyle.Back, Enum.EasingDirection.Out), { Size = UDim2.new(0, 540, 0, 400) }):Play()
 task.wait(0.35)
@@ -682,4 +680,4 @@ TextButton3.MouseButton1Click:Connect(function()
 end)
 
 local botButtonTexts = {
-    [TextButton4] = "✓ Set as Bot
+    [TextButton
